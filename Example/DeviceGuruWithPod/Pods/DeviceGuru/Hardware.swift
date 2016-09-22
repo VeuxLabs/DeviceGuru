@@ -32,6 +32,9 @@ public enum Hardware {
   case IPHONE_6S_PLUS
   case IPHONE_SE
   
+  case IPHONE_7
+  case IPHONE_7_PLUS
+    
   case IPOD_TOUCH_1G
   case IPOD_TOUCH_2G
   case IPOD_TOUCH_3G
@@ -69,6 +72,8 @@ public enum Hardware {
   case IPAD_AIR_2_WIFI
   case IPAD_AIR_2_WIFI_CELLULAR
   
+  case IPAD_PRO_97_WIFI
+  case IPAD_PRO_97_WIFI_CELLULAR
   case IPAD_PRO_WIFI
   case IPAD_PRO_WIFI_CELLULAR
   
