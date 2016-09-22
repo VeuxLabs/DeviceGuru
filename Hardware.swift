@@ -32,6 +32,9 @@ public enum Hardware {
   case IPHONE_6S_PLUS
   case IPHONE_SE
   
+  case IPHONE_7
+  case IPHONE_7_PLUS
+    
   case IPOD_TOUCH_1G
   case IPOD_TOUCH_2G
   case IPOD_TOUCH_3G

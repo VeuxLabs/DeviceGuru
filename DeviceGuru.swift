@@ -76,6 +76,10 @@ public class DeviceGuru {
     if (hardware == "iPhone8,1")         { return Hardware.IPHONE_6S }
     if (hardware == "iPhone8,4")         { return Hardware.IPHONE_SE }
 
+    if (hardware == "iPhone9,1")         { return Hardware.IPHONE_7 }
+    if (hardware == "iPhone9,2")         { return Hardware.IPHONE_7_PLUS }
+    if (hardware == "iPhone9,3")         { return Hardware.IPHONE_7 }
+    if (hardware == "iPhone9,4")         { return Hardware.IPHONE_7_PLUS }
     
     if (hardware == "iPod1,1")           { return Hardware.IPOD_TOUCH_1G }
     if (hardware == "iPod2,1")           { return Hardware.IPOD_TOUCH_2G }
@@ -110,9 +114,6 @@ public class DeviceGuru {
     if (hardware == "iPad5,2")           { return Hardware.IPAD_MINI_4_WIFI_CELLULAR }
     if (hardware == "iPad5,3")           { return Hardware.IPAD_AIR_2_WIFI }
     if (hardware == "iPad5,4")           { return Hardware.IPAD_AIR_2_WIFI_CELLULAR }
-    
-    if (hardware == "iPad6,3")           { return Hardware.IPAD_PRO_97_WIFI }
-    if (hardware == "iPad6,4")           { return Hardware.IPAD_PRO_97_WIFI_CELLULAR }
     if (hardware == "iPad6,7")           { return Hardware.IPAD_PRO_WIFI }
     if (hardware == "iPad6,8")           { return Hardware.IPAD_PRO_WIFI_CELLULAR }
     
@@ -183,10 +184,14 @@ public class DeviceGuru {
     case .IPHONE_3GS:
       return CGSizeMake(2048, 1536)
       
-    case .IPHONE_4, .IPHONE_4_CDMA, .IPAD_3_WIFI, .IPAD_3_WIFI_CDMA, .IPAD_3, .IPAD_4_WIFI, .IPAD_4, .IPAD_4_GSM_CDMA:
+    case .IPHONE_4, .IPHONE_4_CDMA,
+         .IPAD_3_WIFI, .IPAD_3_WIFI_CDMA, .IPAD_3,
+         .IPAD_4_WIFI, .IPAD_4, .IPAD_4_GSM_CDMA:
       return CGSizeMake(2592, 1936)
       
-    case .IPHONE_4S, .IPHONE_5, .IPHONE_5_CDMA_GSM, .IPHONE_5C, .IPHONE_5C_CDMA_GSM, .IPHONE_6, .IPHONE_6_PLUS:
+    case .IPHONE_4S,
+         .IPHONE_5, .IPHONE_5_CDMA_GSM, .IPHONE_5C, .IPHONE_5C_CDMA_GSM,
+         .IPHONE_6, .IPHONE_6_PLUS:
       return CGSizeMake(3264, 2448)
       
     case .IPOD_TOUCH_4G:
@@ -202,22 +207,23 @@ public class DeviceGuru {
       return CGSizeMake(1820, 1304)
 
     case .IPAD_MINI_4_WIFI, .IPAD_MINI_4_WIFI_CELLULAR:
-      return CGSizeMake(3264, 2448)
+      return CGSizeMake(2448, 3264)
 
     case .IPAD_AIR_2_WIFI, .IPAD_AIR_2_WIFI_CELLULAR:
-      return CGSizeMake(2048, 1536)
+      return CGSizeMake(1536, 2048)
     
-    case .IPHONE_6S, .IPHONE_6S_PLUS, Hardware.IPHONE_SE:
-      return CGSizeMake(4032, 3024)
-      
+    case .IPHONE_6S, .IPHONE_6S_PLUS, .IPHONE_SE,
+         .IPHONE_7, .IPHONE_7_PLUS:
+      return CGSizeMake(3024, 4032)
+    
     case .IPAD_PRO_97_WIFI, .IPAD_PRO_97_WIFI_CELLULAR:
-        return CGSizeMake(4032, 3024)
+      return CGSizeMake(4032, 3024)
     case .IPAD_PRO_WIFI, .IPAD_PRO_WIFI_CELLULAR:
       return CGSizeMake(3264, 2448)
+        
  
     default:
-      print("We have no resolution for your device's camera listed in this category. Please, take photo with back camera of your device, get its resolution in pixels (via Preview Cmd+I for example) and add a comment to this repository (https://github.com/InderKumarRathore/DeviceGuru) on GitHub.com in format Device = Wpx x Hpx.")
-    }
+      print("We have no resolution for your device's camera listed in this category. Please, make photo with back camera of your device, get its resolution in pixels (via Preview Cmd+I for example) and add a comment to this repository (https://github.com/InderKumarRathore/DeviceGuru) on GitHub.com in format Device = Hpx x Wpx.") }
     print("Your device is: \(hardwareDescription())")
     
     return CGSizeZero
